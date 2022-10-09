@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
+import Addhabit from "../components/addhabit";
 import Menubar from "../components/menubar";
 import Topbar from "../components/navbar";
 
@@ -14,24 +15,6 @@ export async function getServerSideProps(context) {
 }
 
 export default function Home({ data }) {
-  const [newHabitName, setNewHabitName] = useState("");
-  const [newHabitCategory, setNewHabitCategory] = useState("");
-
-  const createHabit = async () => {
-    const habit = {
-      name: newHabitName,
-      category: newHabitCategory,
-    };
-    const res = await fetch("http://localhost:3000/api/habits", {
-      method: "POST",
-      body: JSON.stringify(habit),
-      headers: {
-        "Content-type": "application/json; charset=utf-8",
-      },
-    });
-
-    console.log(res.json());
-  };
   return (
     <div>
       <Head>
@@ -47,22 +30,6 @@ export default function Home({ data }) {
           <h2>{habit.category}</h2>
         </div>
       ))}
-      <div>
-        <input
-          type="text"
-          name="name"
-          value={newHabitName}
-          onChange={(event) => setNewHabitName(event.target.value)}
-        />
-        <input
-          type="text"
-          name="category"
-          value={newHabitCategory}
-          onChange={(event) => setNewHabitCategory(event.target.value)}
-        />
-        <button onClick={createHabit}>submit</button>
-      </div>
-      <div className="bg-blue-700">Hello</div>
     </div>
   );
 }
