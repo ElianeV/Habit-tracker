@@ -2,12 +2,15 @@ import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
 import Addhabit from "../components/addhabit";
-import Menubar from "../components/menubar";
+import Habitcontainer from "../components/habitcontainer";
+import Menubar from "../components/habitcontainer";
 import Topbar from "../components/navbar";
 
 export async function getServerSideProps(context) {
   const res = await fetch("http://localhost:3000/api/habits");
   const data = await res.json();
+  const array = [{ name: "Test", icon: "path to image" }];
+
   console.log(data);
   return {
     props: { data }, // will be passed to the page component as props
@@ -24,13 +27,7 @@ export default function Home({ data }) {
       </Head>
       <div className="h-screen">
         <Topbar></Topbar>
-        <Menubar></Menubar>
-        {/* {data.map((habit) => (
-          <div key={habit.id} className="bg-blue-50">
-            <h1>{habit.name}</h1>
-            <h2>{habit.category}</h2>
-          </div>
-        ))} */}
+        <Habitcontainer habits={data}></Habitcontainer>
       </div>
     </div>
   );
