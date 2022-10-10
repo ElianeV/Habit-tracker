@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
 import Addhabit from "../components/addhabit";
+import FullCalendar from "../components/fullCalendar";
 import Habitcontainer from "../components/habitcontainer";
 import Menubar from "../components/habitcontainer";
 import Topbar from "../components/navbar";
@@ -27,7 +28,10 @@ export default function Home({ data }) {
       </Head>
       <div className="h-screen">
         <Topbar></Topbar>
-        <Habitcontainer habits={data}></Habitcontainer>
+        <div className="h-[calc(100%-3rem)] w-screen flex items-center">
+          <Habitcontainer habits={data}></Habitcontainer>
+          <FullCalendar></FullCalendar>
+        </div>
       </div>
     </div>
   );
