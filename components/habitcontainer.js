@@ -10,15 +10,14 @@ export default function Habitcontainer({ habits }) {
             <p>{new Date().getFullYear()}</p>
           </div>
         </div>
-        <div className="flex-col h-[calc(100%-3rem)] bg-green-50">
+        <div className="flex flex-col h-[calc(100%-3rem)] bg-green-50">
           {habits.map((habit) => (
             <div
               key={habit.id}
-              className="w-full p-3 flex justify-between border-b"
+              className="w-full grow p-3 flex items-center justify-between border-b"
             >
               <div className="w-4">Icon</div>
               <div className="w-18">{habit.name}</div>
-              <div>5/7 days</div>
               <div className="text-slate-300">Goal in 4</div>
             </div>
           ))}
