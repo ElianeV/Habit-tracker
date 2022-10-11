@@ -11,8 +11,6 @@ export async function getServerSideProps(context) {
   const res = await fetch("http://localhost:3000/api/habits");
   const data = await res.json();
   const array = [{ name: "Test", icon: "path to image" }];
-
-  console.log(data);
   return {
     props: { data }, // will be passed to the page component as props
   };
