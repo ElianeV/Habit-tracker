@@ -16,25 +16,18 @@ export default function FullCalendar({ habits }) {
 
   return (
     <>
-      <div className="w-2/3 h-5/6 overflow-x-scroll">
-        <div className="w-400 h-5/6 ">
-          <div className="h-16 p-1 border-b flex justify-around">
-            {dates.map((date) => (
-              <div key={date.getDate()}>
-                <div>{date.toLocaleString(undefined, options)}</div>
-                <div>{date.getDate()}</div>
-              </div>
-            ))}
-          </div>
-          <div className="h-5/6 flex flex-col">
-            {habits.map((habit) => (
-              <div
-                key={habit.id}
-                className="w-full grow p-3 flex items-center justify-between border-b"
-              ></div>
-            ))}
-          </div>
+      <div className="w-2/3 h-5/6 flex flex-col overflow-x-scroll">
+        <div className="h-16 w-400 flex justify-between p-1 border-b">
+          {dates.map((date) => (
+            <div className="w-10" key={date.getDate()}>
+              <div>{date.toLocaleString(undefined, options)}</div>
+              <div>{date.getDate()}</div>
+            </div>
+          ))}
         </div>
+        {habits.map((habit) => (
+          <div key={habit.id} className="w-400 grow border-b"></div>
+        ))}
       </div>
     </>
   );
