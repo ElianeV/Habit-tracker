@@ -1,11 +1,8 @@
 import Head from "next/head";
-import Image from "next/image";
 import { useState } from "react";
-import Addhabit from "../components/addhabit";
 import FullCalendar from "../components/fullCalendar";
 import Habitcontainer from "../components/habitcontainer";
-import Menubar from "../components/habitcontainer";
-import Topbar from "../components/navbar";
+import Navbar from "../components/navbar";
 
 export async function getServerSideProps(context) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/habits`);
@@ -25,7 +22,7 @@ export default function Home({ data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="h-screen">
-        <Topbar></Topbar>
+        <Navbar></Navbar>
         <div className="h-[calc(100%-3rem)] w-screen flex items-center">
           <Habitcontainer habits={data}></Habitcontainer>
           <FullCalendar habits={data}></FullCalendar>
