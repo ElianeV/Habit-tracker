@@ -8,7 +8,7 @@ import Menubar from "../components/habitcontainer";
 import Topbar from "../components/navbar";
 
 export async function getServerSideProps(context) {
-  const res = await fetch("http://localhost:3000/api/habits");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/habits`);
   const data = await res.json();
   const array = [{ name: "Test", icon: "path to image" }];
   return {

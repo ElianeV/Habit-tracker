@@ -9,7 +9,7 @@ export default function Addhabit() {
       name: newHabitName,
       category: newHabitCategory,
     };
-    const res = await fetch("http://localhost:3000/api/habits", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/habits`, {
       method: "POST",
       body: JSON.stringify(habit),
       headers: {
