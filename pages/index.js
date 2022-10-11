@@ -30,7 +30,7 @@ export default function Home({ data }) {
         <Topbar></Topbar>
         <div className="h-[calc(100%-3rem)] w-screen flex items-center">
           <Habitcontainer habits={data}></Habitcontainer>
-          <FullCalendar></FullCalendar>
+          <FullCalendar habits={data}></FullCalendar>
         </div>
       </div>
     </div>
