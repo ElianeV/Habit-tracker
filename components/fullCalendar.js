@@ -26,7 +26,16 @@ export default function FullCalendar({ habits }) {
           ))}
         </div>
         {habits.map((habit) => (
-          <div key={habit.id} className="w-400 grow border-b"></div>
+          <div
+            key={habit.id}
+            className="w-400 flex justify-between grow border-b"
+          >
+            {dates.map((date) => (
+              <div className="w-10 p-1 border-l border-r" key={date.getDate()}>
+                day
+              </div>
+            ))}
+          </div>
         ))}
       </div>
     </>
