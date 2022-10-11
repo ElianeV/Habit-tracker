@@ -1,68 +1,113 @@
 import Navbar from "../components/navbar";
 import React, { useState } from "react";
+import Image from "next/image";
+import art from "../public/art.png";
+import book from "../public/book.png";
+import brain from "../public/brain.png";
+import dollar from "../public/dollar.png";
+import fitness from "../public/fitness.png";
+import love from "../public/love.png";
+import productive from "../public/productive.png";
+import social from "../public/social.png";
 
 export default function Habitmanager({ data }) {
   const [showModal, setShowModal] = useState(false);
+  const [newHabitName, setNewHabitName] = useState("");
+  const [newHabitCategory, setNewHabitCategory] = useState("");
+
+  const createHabit = async () => {
+    const habit = {
+      name: newHabitName,
+      category: newHabitCategory,
+    };
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/habits`, {
+      method: "POST",
+      body: JSON.stringify(habit),
+      headers: {
+        "Content-type": "application/json; charset=utf-8",
+      },
+    });
+  };
   return (
     <>
       <Navbar></Navbar>
-      <button className="" type="button" onClick={() => setShowModal(true)}>
+      <button
+        className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        type="button"
+        onClick={() => setShowModal(true)}
+      >
         Add new habit
       </button>
       {showModal ? (
         <>
-          <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-            <div className="relative w-auto my-6 mx-auto max-w-3xl">
-              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                <div className="flex items-start justify-between p-5 border-b border-solid border-gray-300 rounded-t ">
-                  <h3 className="text-3xl font=semibold">General Info</h3>
-                  <button
-                    className="bg-transparent border-0 text-black float-right"
-                    onClick={() => setShowModal(false)}
-                  >
-                    <span className="text-black opacity-7 h-6 w-6 text-xl block bg-gray-400 py-0 rounded-full">
-                      x
-                    </span>
-                  </button>
-                </div>
-                <div className="relative p-6 flex-auto">
-                  <form className="bg-gray-200 shadow-md rounded px-8 pt-6 pb-8 w-full">
-                    <label className="block text-black text-sm font-bold mb-1">
-                      First Name
-                    </label>
-                    <input className="shadow appearance-none border rounded w-full py-2 px-1 text-black" />
-                    <label className="block text-black text-sm font-bold mb-1">
-                      Last Name
-                    </label>
-                    <input className="shadow appearance-none border rounded w-full py-2 px-1 text-black" />
-                    <label className="block text-black text-sm font-bold mb-1">
-                      Address
-                    </label>
-                    <input className="shadow appearance-none border rounded w-full py-2 px-1 text-black" />
-                    <label className="block text-black text-sm font-bold mb-1">
-                      City
-                    </label>
-                    <input className="shadow appearance-none border rounded w-full py-2 px-1 text-black" />
-                  </form>
-                </div>
-                <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
-                  <button
-                    className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
-                    type="button"
-                    onClick={() => setShowModal(false)}
-                  >
-                    Close
-                  </button>
-                  <button
-                    className="text-white bg-yellow-500 active:bg-yellow-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                    type="button"
-                    onClick={() => setShowModal(false)}
-                  >
-                    Submit
-                  </button>
-                </div>
+          <div className="w-96 h-96 bg-slate-50 rounded-lg">
+            <h1>Add a new habit</h1>
+            <h2>Name</h2>
+            <input
+              type="text"
+              name="name"
+              className="w-full block"
+              value={newHabitName}
+              onChange={(event) => setNewHabitName(event.target.value)}
+            />
+            <p>Category</p>
+            <div className="flex">
+              <div className="w-7 h-7">
+                <Image src={art} alt="Art icon"></Image>
               </div>
+              <p>Creativity</p>
             </div>
+            <div className="flex">
+              <div className="w-7 h-7">
+                <Image src={book} alt="Book icon"></Image>
+              </div>
+              <p>Learning</p>
+            </div>
+            <div className="flex">
+              <div className="w-7 h-7">
+                <Image src={brain} alt="Brain icon"></Image>
+              </div>
+              <p>Mental health</p>
+            </div>
+            <div className="flex">
+              <div className="w-7 h-7">
+                <Image src={dollar} alt="Dollar icon"></Image>
+              </div>
+              <p>Finances</p>
+            </div>
+            <div className="flex">
+              <div className="w-7 h-7">
+                <Image src={fitness} alt="Fitness icon"></Image>
+              </div>
+              <p>Physical health</p>
+            </div>
+            <div className="flex">
+              <div className="w-7 h-7">
+                <Image src={love} alt="Love icon"></Image>
+              </div>
+              <p>Self-care</p>
+            </div>
+            <div className="flex">
+              <div className="w-7 h-7">
+                <Image src={productive} alt="Productive icon"></Image>
+              </div>
+              <p>Productivity</p>
+            </div>
+            <div className="flex">
+              <div className="w-7 h-7">
+                <Image src={social} alt="Social icon"></Image>
+              </div>
+              <p>Social</p>
+            </div>
+            <input
+              type="text"
+              name="category"
+              className="w-full block"
+              value={newHabitCategory}
+              onChange={(event) => setNewHabitCategory(event.target.value)}
+            />
+            <p>Goal</p>
+            <button onClick={createHabit}>submit</button>
           </div>
         </>
       ) : null}
