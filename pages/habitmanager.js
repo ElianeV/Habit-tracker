@@ -9,6 +9,7 @@ import fitness from "../public/fitness.png";
 import love from "../public/love.png";
 import productive from "../public/productive.png";
 import social from "../public/social.png";
+import bghabits from "../public/bghabits.png";
 
 export default function Habitmanager({ data }) {
   const [showModal, setShowModal] = useState(false);
@@ -31,13 +32,21 @@ export default function Habitmanager({ data }) {
   return (
     <>
       <Navbar></Navbar>
-      <button
-        className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        type="button"
-        onClick={() => setShowModal(true)}
-      >
-        Add new habit
-      </button>
+      <div className="w-11/12 md:w-8/12 h-96 mt-12 relative m-auto">
+        <p className="text-center text-2xl py-5">
+          You are not tracking any habits
+        </p>
+        <button
+          className="block m-auto text-white bg-zinc-500 hover:bg-zinc-800  font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+          type="button"
+          onClick={() => setShowModal(true)}
+        >
+          Add new habit
+        </button>
+        <div className="absolute bottom-0">
+          <Image src={bghabits}></Image>
+        </div>
+      </div>
       {showModal ? (
         <>
           <div className="w-96 h-96 bg-slate-50 rounded-lg">
