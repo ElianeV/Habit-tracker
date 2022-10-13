@@ -1,5 +1,4 @@
 export default function Habitcontainer({ habits }) {
-  console.log(habits);
   return (
     <>
       <div className="w-1/3 h-5/6 ml-10 shadow-lg bg-slate-50 flex flex-col">

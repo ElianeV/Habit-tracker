@@ -1,6 +1,7 @@
 import moment from "moment";
 import { useEffect } from "react";
 import { useState } from "react";
+import CalendarRow from "./calendarRow";
 
 export default function FullCalendar({ habits }) {
   const startOfMonth = moment().startOf("month").add(-1, "days");
@@ -26,16 +27,7 @@ export default function FullCalendar({ habits }) {
           ))}
         </div>
         {habits.map((habit) => (
-          <div
-            key={habit.id}
-            className="w-400 flex justify-between grow border-b"
-          >
-            {dates.map((date) => (
-              <div className="w-10 p-1 border-l border-r" key={date.getDate()}>
-                day
-              </div>
-            ))}
-          </div>
+          <CalendarRow key={habit.id} habit={habit} dates={dates} />
         ))}
       </div>
     </>

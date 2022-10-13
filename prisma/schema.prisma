@@ -15,4 +15,12 @@ model Habit {
   updatedAt DateTime @updatedAt
   name      String   @db.VarChar(255)
   category  String   @db.VarChar(255)
+  habitsCompleted Day[]
+}
+
+model Day {
+  id        Int      @id @default(autoincrement())
+  date      DateTime
+  habit     Habit? @relation(fields: [habitId], references: [id])
+  habitId Int
 }

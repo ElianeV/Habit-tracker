@@ -4,12 +4,12 @@ import FullCalendar from "../components/fullCalendar";
 import Habitcontainer from "../components/habitcontainer";
 import Navbar from "../components/navbar";
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/habits`);
   const data = await res.json();
   const array = [{ name: "Test", icon: "path to image" }];
   return {
-    props: { data }, // will be passed to the page component as props
+    props: { data },
   };
 }
 
@@ -24,8 +24,8 @@ export default function Home({ data }) {
       <div className="h-screen">
         <Navbar></Navbar>
         <div className="h-[calc(100%-3rem)] w-screen flex items-center">
-          <Habitcontainer habits={data}></Habitcontainer>
-          <FullCalendar habits={data}></FullCalendar>
+          <Habitcontainer habits={data} />
+          <FullCalendar habits={data} />
         </div>
       </div>
     </div>
