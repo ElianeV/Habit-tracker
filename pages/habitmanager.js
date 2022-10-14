@@ -49,74 +49,77 @@ export default function Habitmanager({ data }) {
       </div>
       {showModal ? (
         <>
-          <div className="w-96 h-96 bg-slate-50 rounded-lg">
-            <h1>Add a new habit</h1>
-            <h2>Name</h2>
-            <input
-              type="text"
-              name="name"
-              className="w-full block"
-              value={newHabitName}
-              onChange={(event) => setNewHabitName(event.target.value)}
-            />
-            <p>Category</p>
-            <div className="flex">
-              <div className="w-7 h-7">
-                <Image src={art} alt="Art icon"></Image>
+          <div className="w-full h-full absolute top-0 flex justify-center items-center bg-neutral-900 bg-opacity-50">
+            <div className="w-112 h-112 p-8 bg-white rounded-2xl">
+              <h4 className="text-center text-2xl font-bold">New habit</h4>
+              <h6 className="font-bold mt-2 pl-4">Name</h6>
+              <input
+                type="text"
+                name="name"
+                className="w-full block rounded-3xl bg-neutral-50 border-neutral-200 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 invalid:border-pink-500 invalid:text-pink-600
+                focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
+                value={newHabitName}
+                onChange={(event) => setNewHabitName(event.target.value)}
+              />
+              <h6 className="font-bold mt-2 pl-4">Category</h6>
+              <div className="flex">
+                <div className="w-7 h-7">
+                  <Image src={art} alt="Art icon"></Image>
+                </div>
+                <p>Creativity</p>
               </div>
-              <p>Creativity</p>
-            </div>
-            <div className="flex">
-              <div className="w-7 h-7">
-                <Image src={book} alt="Book icon"></Image>
+              <div className="flex">
+                <div className="w-7 h-7">
+                  <Image src={book} alt="Book icon"></Image>
+                </div>
+                <p>Learning</p>
               </div>
-              <p>Learning</p>
-            </div>
-            <div className="flex">
-              <div className="w-7 h-7">
-                <Image src={brain} alt="Brain icon"></Image>
+              <div className="flex">
+                <div className="w-7 h-7">
+                  <Image src={brain} alt="Brain icon"></Image>
+                </div>
+                <p>Mental health</p>
               </div>
-              <p>Mental health</p>
-            </div>
-            <div className="flex">
-              <div className="w-7 h-7">
-                <Image src={dollar} alt="Dollar icon"></Image>
+              <div className="flex">
+                <div className="w-7 h-7">
+                  <Image src={dollar} alt="Dollar icon"></Image>
+                </div>
+                <p>Finances</p>
               </div>
-              <p>Finances</p>
-            </div>
-            <div className="flex">
-              <div className="w-7 h-7">
-                <Image src={fitness} alt="Fitness icon"></Image>
+              <div className="flex">
+                <div className="w-7 h-7">
+                  <Image src={fitness} alt="Fitness icon"></Image>
+                </div>
+                <p>Physical health</p>
               </div>
-              <p>Physical health</p>
-            </div>
-            <div className="flex">
-              <div className="w-7 h-7">
-                <Image src={love} alt="Love icon"></Image>
+              <div className="flex">
+                <div className="w-7 h-7">
+                  <Image src={love} alt="Love icon"></Image>
+                </div>
+                <p>Self-care</p>
               </div>
-              <p>Self-care</p>
-            </div>
-            <div className="flex">
-              <div className="w-7 h-7">
-                <Image src={productive} alt="Productive icon"></Image>
+              <div className="flex">
+                <div className="w-7 h-7">
+                  <Image src={productive} alt="Productive icon"></Image>
+                </div>
+                <p>Productivity</p>
               </div>
-              <p>Productivity</p>
-            </div>
-            <div className="flex">
-              <div className="w-7 h-7">
-                <Image src={social} alt="Social icon"></Image>
+              <div className="flex">
+                <div className="w-7 h-7">
+                  <Image src={social} alt="Social icon"></Image>
+                </div>
+                <p>Social</p>
               </div>
-              <p>Social</p>
+              <input
+                type="text"
+                name="category"
+                className="w-full block"
+                value={newHabitCategory}
+                onChange={(event) => setNewHabitCategory(event.target.value)}
+              />
+              <p>Goal</p>
+              <button onClick={createHabit}>submit</button>
             </div>
-            <input
-              type="text"
-              name="category"
-              className="w-full block"
-              value={newHabitCategory}
-              onChange={(event) => setNewHabitCategory(event.target.value)}
-            />
-            <p>Goal</p>
-            <button onClick={createHabit}>submit</button>
           </div>
         </>
       ) : null}
