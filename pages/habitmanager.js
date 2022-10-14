@@ -63,73 +63,145 @@ export default function Habitmanager({ data }) {
               />
               <h6 className="font-bold mt-2 pl-4">Category</h6>
               <div
+                className="w-full h-40 flex flex-column flex-wrap justify-between"
                 onChange={(event) => setNewHabitCategory(event.target.value)}
               >
-                <input type="radio" value="Pysical health" name="category" />
-                Pysical health
-                <input type="radio" value="Learning" name="category" />
-                Learning
-                <input type="radio" value="Productivity" name="category" />
-                Productivity
-                <input type="radio" value="Self-care" name="category" />
-                Self-care
-                <input type="radio" value="Mental health" name="category" />
-                Mental health
-                <input type="radio" value="Finances" name="category" />
-                Finances
-                <input type="radio" value="Creativity" name="category" />
-                Creativity
-                <input type="radio" value="Social" name="category" />
-                Social
+                <input
+                  className="opacity-0 absolute"
+                  id="Physical health"
+                  type="radio"
+                  value="Pysical health"
+                  name="category"
+                />
+                <label
+                  for="Physical health"
+                  className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50"
+                >
+                  <div className="w-7 h-7 ml-2">
+                    <Image src={fitness} alt="Fitness icon" />
+                  </div>
+                  <span className="ml-2">Physical health</span>
+                </label>
+
+                <input
+                  className="opacity-0 absolute"
+                  id="Learning"
+                  type="radio"
+                  value="Learning"
+                  name="category"
+                />
+                <label
+                  for="Learning"
+                  className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50"
+                >
+                  <div className="w-7 h-7 ml-2">
+                    <Image src={book} alt="Book icon" />
+                  </div>
+                  <span className="ml-2">Learning</span>
+                </label>
+
+                <input
+                  className="opacity-0 absolute"
+                  id="Productivity"
+                  type="radio"
+                  value="Productivity"
+                  name="category"
+                />
+                <label
+                  for="Productivity"
+                  className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50"
+                >
+                  <div className="w-7 h-7 ml-2">
+                    <Image src={productive} alt="Productive icon" />
+                  </div>
+                  <span className="ml-2">Productivity</span>
+                </label>
+
+                <input
+                  className="opacity-0 absolute"
+                  id="Self-care"
+                  type="radio"
+                  value="Self-care"
+                  name="category"
+                />
+                <label
+                  for="Self-care"
+                  className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50"
+                >
+                  <div className="w-7 h-7 ml-2">
+                    <Image src={love} alt="Love icon" />
+                  </div>
+                  <span className="ml-2">Self-care</span>
+                </label>
+
+                <input
+                  className="opacity-0 absolute"
+                  id="Mental health"
+                  type="radio"
+                  value="Mental health"
+                  name="category"
+                />
+                <label
+                  for="Mental health"
+                  className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50"
+                >
+                  <div className="w-7 h-7 ml-2">
+                    <Image src={brain} alt="Brain icon" />
+                  </div>
+                  <span className="ml-2">Mental health</span>
+                </label>
+
+                <input
+                  className="opacity-0 absolute"
+                  id="Finances"
+                  type="radio"
+                  value="Finances"
+                  name="category"
+                />
+                <label
+                  for="Finances"
+                  className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50"
+                >
+                  <div className="w-7 h-7 ml-2">
+                    <Image src={dollar} alt="Dollar icon" />
+                  </div>
+                  <span className="ml-2">Finances</span>
+                </label>
+
+                <input
+                  className="opacity-0 absolute"
+                  id="Creativity"
+                  type="radio"
+                  value="Creativity"
+                  name="category"
+                />
+                <label
+                  for="Creativity"
+                  className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50"
+                >
+                  <div className="w-7 h-7 ml-2">
+                    <Image src={art} alt="Art icon" />
+                  </div>
+                  <span className="ml-2">Creativity</span>
+                </label>
+
+                <input
+                  className="opacity-0 absolute"
+                  id="Social"
+                  type="radio"
+                  value="Social"
+                  name="category"
+                />
+                <label
+                  for="Social"
+                  className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50"
+                >
+                  <div className="w-7 h-7 ml-2">
+                    <Image src={social} alt="Social icon" />
+                  </div>
+                  <span className="ml-2">Social</span>
+                </label>
               </div>
-              {/* <div className="w-100 p-1 pl-3 flex items-center rounded-3xl bg-neutral-50 hover:bg-indigo-50">
-                <div className="w-7 h-7">
-                  <Image src={art} alt="Art icon" />
-                </div>
-                <p className="pl-2">Creativity</p>
-              </div>
-              <div className="flex">
-                <div className="w-7 h-7">
-                  <Image src={book} alt="Book icon" />
-                </div>
-                <p>Learning</p>
-              </div>
-              <div className="flex">
-                <div className="w-7 h-7">
-                  <Image src={brain} alt="Brain icon"></Image>
-                </div>
-                <p>Mental health</p>
-              </div>
-              <div className="flex">
-                <div className="w-7 h-7">
-                  <Image src={dollar} alt="Dollar icon"></Image>
-                </div>
-                <p>Finances</p>
-              </div>
-              <div className="flex">
-                <div className="w-7 h-7">
-                  <Image src={fitness} alt="Fitness icon"></Image>
-                </div>
-                <p>Physical health</p>
-              </div>
-              <div className="flex">
-                <div className="w-7 h-7">
-                  <Image src={love} alt="Love icon"></Image>
-                </div>
-                <p>Self-care</p>
-              </div>
-              <div className="flex">
-                <div className="w-7 h-7">
-                  <Image src={productive} alt="Productive icon"></Image>
-                </div>
-                <p>Productivity</p>
-              </div>
-              <div className="flex">
-                <div className="w-7 h-7">
-                  <Image src={social} alt="Social icon"></Image>
-                </div>
-                <p>Social</p>
-              </div> */}
 
               <p>Goal</p>
               <button onClick={createHabit}>submit</button>

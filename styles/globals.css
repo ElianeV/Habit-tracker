@@ -28,3 +28,6 @@ a {
     background: black;
   }
 }
+input[type="radio"]:checked + label {
+  background-color: #a5b4fc;
+}
