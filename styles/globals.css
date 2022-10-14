@@ -29,5 +29,5 @@ a {
   }
 }
 input[type="radio"]:checked + label {
-  background-color: #a5b4fc;
+  background-image: linear-gradient(to bottom right, #eef2ff, #a5b4fc);
 }

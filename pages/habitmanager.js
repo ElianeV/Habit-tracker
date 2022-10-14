@@ -56,7 +56,7 @@ export default function Habitmanager({ data }) {
               <input
                 type="text"
                 name="name"
-                className="w-full block rounded-3xl bg-neutral-50 border-neutral-200 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 invalid:border-pink-500 invalid:text-pink-600
+                className="w-full block rounded-3xl bg-neutral-50 border-neutral-200 focus:outline-none focus:border-indigo-400 focus:ring-1 focus:ring-indigo-400 invalid:border-pink-500 invalid:text-pink-600
                 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
                 value={newHabitName}
                 onChange={(event) => setNewHabitName(event.target.value)}
@@ -75,7 +75,7 @@ export default function Habitmanager({ data }) {
                 />
                 <label
                   for="Physical health"
-                  className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50"
+                  className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer"
                 >
                   <div className="w-7 h-7 ml-2">
                     <Image src={fitness} alt="Fitness icon" />
@@ -92,7 +92,7 @@ export default function Habitmanager({ data }) {
                 />
                 <label
                   for="Learning"
-                  className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50"
+                  className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer"
                 >
                   <div className="w-7 h-7 ml-2">
                     <Image src={book} alt="Book icon" />
@@ -109,7 +109,7 @@ export default function Habitmanager({ data }) {
                 />
                 <label
                   for="Productivity"
-                  className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50"
+                  className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer"
                 >
                   <div className="w-7 h-7 ml-2">
                     <Image src={productive} alt="Productive icon" />
@@ -126,7 +126,7 @@ export default function Habitmanager({ data }) {
                 />
                 <label
                   for="Self-care"
-                  className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50"
+                  className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer"
                 >
                   <div className="w-7 h-7 ml-2">
                     <Image src={love} alt="Love icon" />
@@ -143,7 +143,7 @@ export default function Habitmanager({ data }) {
                 />
                 <label
                   for="Mental health"
-                  className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50"
+                  className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer"
                 >
                   <div className="w-7 h-7 ml-2">
                     <Image src={brain} alt="Brain icon" />
@@ -160,7 +160,7 @@ export default function Habitmanager({ data }) {
                 />
                 <label
                   for="Finances"
-                  className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50"
+                  className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer"
                 >
                   <div className="w-7 h-7 ml-2">
                     <Image src={dollar} alt="Dollar icon" />
@@ -177,7 +177,7 @@ export default function Habitmanager({ data }) {
                 />
                 <label
                   for="Creativity"
-                  className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50"
+                  className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer"
                 >
                   <div className="w-7 h-7 ml-2">
                     <Image src={art} alt="Art icon" />
@@ -194,7 +194,7 @@ export default function Habitmanager({ data }) {
                 />
                 <label
                   for="Social"
-                  className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50"
+                  className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer"
                 >
                   <div className="w-7 h-7 ml-2">
                     <Image src={social} alt="Social icon" />
@@ -203,7 +203,7 @@ export default function Habitmanager({ data }) {
                 </label>
               </div>
 
-              <p>Goal</p>
+              <h6 className="font-bold mt-2 pl-4">Category</h6>
               <button onClick={createHabit}>submit</button>
             </div>
           </div>
