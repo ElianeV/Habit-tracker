@@ -31,7 +31,7 @@ export default function Habitmanager({ data }) {
   };
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar />
       <div className="w-11/12 md:w-8/12 h-96 mt-12 relative m-auto">
         <p className="text-center text-2xl py-5">
           You are not tracking any habits
@@ -44,7 +44,7 @@ export default function Habitmanager({ data }) {
           Add new habit
         </button>
         <div className="absolute bottom-0">
-          <Image src={bghabits}></Image>
+          <Image src={bghabits} />
         </div>
       </div>
       {showModal ? (
@@ -62,15 +62,35 @@ export default function Habitmanager({ data }) {
                 onChange={(event) => setNewHabitName(event.target.value)}
               />
               <h6 className="font-bold mt-2 pl-4">Category</h6>
-              <div className="flex">
+              <div
+                onChange={(event) => setNewHabitCategory(event.target.value)}
+              >
+                <input type="radio" value="Pysical health" name="category" />
+                Pysical health
+                <input type="radio" value="Learning" name="category" />
+                Learning
+                <input type="radio" value="Productivity" name="category" />
+                Productivity
+                <input type="radio" value="Self-care" name="category" />
+                Self-care
+                <input type="radio" value="Mental health" name="category" />
+                Mental health
+                <input type="radio" value="Finances" name="category" />
+                Finances
+                <input type="radio" value="Creativity" name="category" />
+                Creativity
+                <input type="radio" value="Social" name="category" />
+                Social
+              </div>
+              {/* <div className="w-100 p-1 pl-3 flex items-center rounded-3xl bg-neutral-50 hover:bg-indigo-50">
                 <div className="w-7 h-7">
-                  <Image src={art} alt="Art icon"></Image>
+                  <Image src={art} alt="Art icon" />
                 </div>
-                <p>Creativity</p>
+                <p className="pl-2">Creativity</p>
               </div>
               <div className="flex">
                 <div className="w-7 h-7">
-                  <Image src={book} alt="Book icon"></Image>
+                  <Image src={book} alt="Book icon" />
                 </div>
                 <p>Learning</p>
               </div>
@@ -109,14 +129,8 @@ export default function Habitmanager({ data }) {
                   <Image src={social} alt="Social icon"></Image>
                 </div>
                 <p>Social</p>
-              </div>
-              <input
-                type="text"
-                name="category"
-                className="w-full block"
-                value={newHabitCategory}
-                onChange={(event) => setNewHabitCategory(event.target.value)}
-              />
+              </div> */}
+
               <p>Goal</p>
               <button onClick={createHabit}>submit</button>
             </div>

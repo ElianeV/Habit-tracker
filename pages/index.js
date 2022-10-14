@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { useState } from "react";
 import FullCalendar from "../components/fullCalendar";
 import Habitcontainer from "../components/habitcontainer";
 import Navbar from "../components/navbar";

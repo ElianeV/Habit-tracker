@@ -1,6 +1,4 @@
 import moment from "moment";
-import { useEffect } from "react";
-import { useState } from "react";
 import CalendarRow from "./calendarRow";
 
 export default function FullCalendar({ habits }) {
