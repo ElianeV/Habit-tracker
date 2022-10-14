@@ -6,7 +6,7 @@ import Navbar from "../components/navbar";
 export async function getServerSideProps() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/habits`);
   const data = await res.json();
-  const array = [{ name: "Test", icon: "path to image" }];
+
   return {
     props: { data },
   };

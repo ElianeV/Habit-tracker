@@ -9,6 +9,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         data: {
           name: req.body.name,
           category: req.body.category,
+          goal: parseInt(req.body.goal),
           // habitsCompleted: {
           //   create: [{ date: new Date()}]
           // },

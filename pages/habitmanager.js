@@ -1,5 +1,5 @@
 import Navbar from "../components/navbar";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import art from "../public/art.png";
 import book from "../public/book.png";
@@ -14,20 +14,27 @@ import bghabits from "../public/bghabits.png";
 export default function Habitmanager({ data }) {
   const [showModal, setShowModal] = useState(false);
   const [newHabitName, setNewHabitName] = useState("");
-  const [newHabitCategory, setNewHabitCategory] = useState("");
+  const [newHabitCategory, setNewHabitCategory] = useState("Physical health");
+  const [newHabitGoal, setNewHabitGoal] = useState(7);
+  const [requiredError, setRequiredError] = useState(false);
 
   const createHabit = async () => {
-    const habit = {
-      name: newHabitName,
-      category: newHabitCategory,
-    };
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/habits`, {
-      method: "POST",
-      body: JSON.stringify(habit),
-      headers: {
-        "Content-type": "application/json; charset=utf-8",
-      },
-    });
+    if (newHabitName !== "") {
+      const habit = {
+        name: newHabitName,
+        category: newHabitCategory,
+        goal: newHabitGoal,
+      };
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/habits`, {
+        method: "POST",
+        body: JSON.stringify(habit),
+        headers: {
+          "Content-type": "application/json; charset=utf-8",
+        },
+      });
+    } else {
+      setRequiredError(true);
+    }
   };
   return (
     <>
@@ -50,7 +57,7 @@ export default function Habitmanager({ data }) {
       {showModal ? (
         <>
           <div className="w-full h-full absolute top-0 flex justify-center items-center bg-neutral-900 bg-opacity-50">
-            <div className="w-112 h-112 p-7 bg-white rounded-2xl">
+            <div className="w-112 p-7 bg-white rounded-2xl">
               <h4 className="text-center text-xl leading-3 font-bold text-neutral-800">
                 New habit
               </h4>
@@ -58,11 +65,21 @@ export default function Habitmanager({ data }) {
               <input
                 type="text"
                 name="name"
-                className="w-full block rounded-3xl bg-neutral-50 border-neutral-200 focus:outline-none focus:border-indigo-400 focus:ring-1 focus:ring-indigo-400 invalid:border-pink-500 invalid:text-pink-600
-                focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
+                className={
+                  requiredError
+                    ? "w-full block rounded-3xl bg-neutral-50 border-rose-400 focus:outline-none focus:border-rose-400 focus:ring-1 focus:ring-rose-400"
+                    : "w-full block rounded-3xl bg-neutral-50 border-neutral-200 focus:outline-none focus:border-indigo-400 focus:ring-1 focus:ring-indigo-400"
+                }
                 value={newHabitName}
                 onChange={(event) => setNewHabitName(event.target.value)}
               />
+              {requiredError ? (
+                <span className="ml-4 text-rose-700 text-xs leading-3">
+                  Please fill out a habit name
+                </span>
+              ) : (
+                ""
+              )}
               <h6 className="font-bold mt-2 pl-4 text-neutral-700">Category</h6>
               <div
                 className="w-full h-40 flex flex-column flex-wrap justify-between"
@@ -72,11 +89,12 @@ export default function Habitmanager({ data }) {
                   className="opacity-0 absolute"
                   id="Physical health"
                   type="radio"
-                  value="Pysical health"
+                  value="Physical health"
                   name="category"
+                  defaultChecked
                 />
                 <label
-                  for="Physical health"
+                  htmlFor="Physical health"
                   className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer text-neutral-700"
                 >
                   <div className="w-7 h-7 ml-2">
@@ -93,7 +111,7 @@ export default function Habitmanager({ data }) {
                   name="category"
                 />
                 <label
-                  for="Learning"
+                  htmlFor="Learning"
                   className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer text-neutral-700"
                 >
                   <div className="w-7 h-7 ml-2">
@@ -110,7 +128,7 @@ export default function Habitmanager({ data }) {
                   name="category"
                 />
                 <label
-                  for="Productivity"
+                  htmlFor="Productivity"
                   className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer text-neutral-700"
                 >
                   <div className="w-7 h-7 ml-2">
@@ -127,7 +145,7 @@ export default function Habitmanager({ data }) {
                   name="category"
                 />
                 <label
-                  for="Self-care"
+                  htmlFor="Self-care"
                   className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer text-neutral-700"
                 >
                   <div className="w-7 h-7 ml-2">
@@ -144,7 +162,7 @@ export default function Habitmanager({ data }) {
                   name="category"
                 />
                 <label
-                  for="Mental health"
+                  htmlFor="Mental health"
                   className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer text-neutral-700"
                 >
                   <div className="w-7 h-7 ml-2">
@@ -161,7 +179,7 @@ export default function Habitmanager({ data }) {
                   name="category"
                 />
                 <label
-                  for="Finances"
+                  htmlFor="Finances"
                   className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer text-neutral-700"
                 >
                   <div className="w-7 h-7 ml-2">
@@ -178,7 +196,7 @@ export default function Habitmanager({ data }) {
                   name="category"
                 />
                 <label
-                  for="Creativity"
+                  htmlFor="Creativity"
                   className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer text-neutral-700"
                 >
                   <div className="w-7 h-7 ml-2">
@@ -195,7 +213,7 @@ export default function Habitmanager({ data }) {
                   name="category"
                 />
                 <label
-                  for="Social"
+                  htmlFor="Social"
                   className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer text-neutral-700"
                 >
                   <div className="w-7 h-7 ml-2">
@@ -214,6 +232,8 @@ export default function Habitmanager({ data }) {
                 name="goal"
                 min="1"
                 max="100"
+                value={newHabitGoal}
+                onChange={(event) => setNewHabitGoal(event.target.value)}
               ></input>
               <span className="text-neutral-700">
                 days and reward yourself!
