@@ -7,6 +7,10 @@ import Modal from "../components/modal";
 export default function Habitmanager({ data }) {
   const [showModal, setShowModal] = useState(false);
 
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+
   return (
     <>
       <Navbar />
@@ -17,7 +21,7 @@ export default function Habitmanager({ data }) {
         <button
           className="block m-auto text-white bg-neutral-500 hover:bg-neutral-800  font-medium rounded-lg text-sm px-5 py-2.5 text-center"
           type="button"
-          onClick={() => setShowModal(true)}
+          onClick={toggleModal}
         >
           Add new habit
         </button>
@@ -25,7 +29,15 @@ export default function Habitmanager({ data }) {
           <Image src={bghabits} />
         </div>
       </div>
-      {showModal ? <Modal /> : null}
+      {showModal ? (
+        <>
+          <div
+            className="w-full h-full absolute top-0 flex justify-center items-center bg-neutral-900 bg-opacity-50"
+            onClick={toggleModal}
+          ></div>
+          <Modal toggleModal={toggleModal} />
+        </>
+      ) : null}
     </>
   );
 }
