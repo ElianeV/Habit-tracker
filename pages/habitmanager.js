@@ -42,7 +42,7 @@ export default function Habitmanager({ data }) {
             >
               Add new habit
             </button>
-            <div className="w-full h-96 overflow-y-auto mt-8 flex flex-wrap">
+            <div className="w-full  mt-8 flex flex-wrap">
               {data
                 .sort((a, b) => compare(b.createdAt, a.createdAt))
                 .map((habit) => (
@@ -113,7 +113,7 @@ export default function Habitmanager({ data }) {
       {showModal ? (
         <>
           <div
-            className="w-full h-screen z-30 absolute top-0 flex justify-center items-center bg-neutral-900 bg-opacity-50"
+            className="w-full h-screen fixed z-30 top-0 flex justify-center items-center bg-neutral-900 bg-opacity-50"
             onClick={toggleModal}
           ></div>
           <Modal toggleModal={toggleModal} refreshData={refreshData} />
