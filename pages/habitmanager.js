@@ -42,7 +42,7 @@ export default function Habitmanager({ data }) {
             >
               Add new habit
             </button>
-            <div className="w-full  mt-8 flex flex-wrap">
+            <div className="w-full mt-8 flex flex-wrap">
               {data
                 .sort((a, b) => compare(b.createdAt, a.createdAt))
                 .map((habit) => (
@@ -55,7 +55,7 @@ export default function Habitmanager({ data }) {
                         alt="Social icon"
                       />
                     </div>
-                    <div className="relative w-72 h-56 p-4 pt-8 border-neutral-200 border-solid border-2 rounded-3xl">
+                    <div className="relative w-72 h-56 m-auto p-4 pt-8 border-neutral-200 border-solid border-2 rounded-3xl">
                       <h2 className="text-3xl text-neutral-800 font-bold">
                         <span className="w-10 bg-gradient-to-r from-amber-100 to-amber-100 bg-no-repeat bg-[length:100%_70%] bg-[center_top_0.9rem]">
                           {habit.name}
