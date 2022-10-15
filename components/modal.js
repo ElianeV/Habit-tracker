@@ -233,7 +233,7 @@ export default function Modal({ toggleModal, refreshData }) {
         <h6 className="font-bold mt-2 pl-4 text-neutral-700">Goal</h6>
         <span className="ml-4 text-neutral-700">Complete</span>
         <input
-          className="mx-1 bg-neutral-50 border-neutral-200 border-solid border-1   rounded-3xl text-neutral-700 focus:outline-none focus:border-indigo-400 focus:ring-1 focus:ring-indigo-400"
+          className="w-15 mx-1 bg-neutral-50 border-neutral-200 border-solid border-1   rounded-3xl text-neutral-700 focus:outline-none focus:border-indigo-400 focus:ring-1 focus:ring-indigo-400"
           type="number"
           name="goal"
           min="1"
