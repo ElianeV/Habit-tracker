@@ -1,13 +1,13 @@
 import { useState } from "react";
 import Image from "next/image";
-import art from "../public/art.png";
-import book from "../public/book.png";
-import brain from "../public/brain.png";
-import dollar from "../public/dollar.png";
-import fitness from "../public/fitness.png";
-import love from "../public/love.png";
-import productive from "../public/productive.png";
-import social from "../public/social.png";
+import art from "../public/Creativity.png";
+import book from "../public/Learning.png";
+import brain from "../public/Mental health.png";
+import dollar from "../public/Finances.png";
+import fitness from "../public/Physical health.png";
+import love from "../public/Self-care.png";
+import productive from "../public/Productivity.png";
+import social from "../public/Social.png";
 
 export default function Modal({ toggleModal }) {
   const [newHabitName, setNewHabitName] = useState("");
@@ -35,7 +35,7 @@ export default function Modal({ toggleModal }) {
   };
   return (
     <>
-      <div className="w-112 absolute top-1/2 left-1/2 -ml-56 -mt-60 p-7 bg-white rounded-2xl">
+      <div className="w-112 z-40 absolute top-1/2 left-1/2 -ml-56 -mt-60 p-7 bg-white rounded-2xl">
         <button
           type="button"
           onClick={toggleModal}
@@ -225,7 +225,7 @@ export default function Modal({ toggleModal }) {
         <h6 className="font-bold mt-2 pl-4 text-neutral-700">Goal</h6>
         <span className="ml-4 text-neutral-700">Complete</span>
         <input
-          className="mx-1 bg-neutral-50 border-neutral-200 border-solid border-1 border-neutral-200  rounded-3xl text-neutral-700 focus:outline-none focus:border-indigo-400 focus:ring-1 focus:ring-indigo-400"
+          className="mx-1 bg-neutral-50 border-neutral-200 border-solid border-1   rounded-3xl text-neutral-700 focus:outline-none focus:border-indigo-400 focus:ring-1 focus:ring-indigo-400"
           type="number"
           name="goal"
           min="1"
