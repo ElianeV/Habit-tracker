@@ -38,7 +38,7 @@ export default function Modal({ toggleModal, refreshData }) {
   };
   return (
     <>
-      <div className="w-112 z-40 absolute top-1/2 left-1/2 -ml-56 -mt-60 p-7 bg-white rounded-2xl">
+      <div className="w-112 z-40 fixed top-1/2 left-1/2 -ml-56 -mt-60 p-7 bg-white rounded-2xl">
         <button
           type="button"
           onClick={toggleModal}
