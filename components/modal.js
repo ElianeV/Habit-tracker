@@ -1,13 +1,13 @@
 import { useState } from "react";
 import Image from "next/image";
-import art from "../public/Creativity.png";
-import book from "../public/Learning.png";
-import brain from "../public/Mental health.png";
-import dollar from "../public/Finances.png";
-import fitness from "../public/Physical health.png";
-import love from "../public/Self-care.png";
-import productive from "../public/Productivity.png";
-import social from "../public/Social.png";
+// import art from "../public/Creativity.png";
+// import book from "../public/Learning.png";
+// import brain from "../public/Mental health.png";
+// import dollar from "../public/Finances.png";
+// import fitness from "../public/Physical health.png";
+// import love from "../public/Self-care.png";
+// import productive from "../public/Productivity.png";
+// import social from "../public/Social.png";
 
 export default function Modal({ toggleModal, refreshData }) {
   const [newHabitName, setNewHabitName] = useState("");
@@ -100,7 +100,12 @@ export default function Modal({ toggleModal, refreshData }) {
             className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer text-neutral-700"
           >
             <div className="w-7 h-7 ml-2">
-              <Image src={fitness} alt="Fitness icon" />
+              <Image
+                src={`/Social.png`}
+                width="40px"
+                height="40px"
+                alt="Fitness icon"
+              />
             </div>
             <span className="ml-2">Physical health</span>
           </label>
@@ -116,9 +121,9 @@ export default function Modal({ toggleModal, refreshData }) {
             htmlFor="Learning"
             className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer text-neutral-700"
           >
-            <div className="w-7 h-7 ml-2">
+            {/* <div className="w-7 h-7 ml-2">
               <Image src={book} alt="Book icon" />
-            </div>
+            </div> */}
             <span className="ml-2">Learning</span>
           </label>
 
@@ -133,9 +138,9 @@ export default function Modal({ toggleModal, refreshData }) {
             htmlFor="Productivity"
             className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer text-neutral-700"
           >
-            <div className="w-7 h-7 ml-2">
+            {/* <div className="w-7 h-7 ml-2">
               <Image src={productive} alt="Productive icon" />
-            </div>
+            </div> */}
             <span className="ml-2">Productivity</span>
           </label>
 
@@ -150,9 +155,9 @@ export default function Modal({ toggleModal, refreshData }) {
             htmlFor="Self-care"
             className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer text-neutral-700"
           >
-            <div className="w-7 h-7 ml-2">
+            {/* <div className="w-7 h-7 ml-2">
               <Image src={love} alt="Love icon" />
-            </div>
+            </div> */}
             <span className="ml-2">Self-care</span>
           </label>
 
@@ -167,9 +172,9 @@ export default function Modal({ toggleModal, refreshData }) {
             htmlFor="Mental health"
             className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer text-neutral-700"
           >
-            <div className="w-7 h-7 ml-2">
+            {/* <div className="w-7 h-7 ml-2">
               <Image src={brain} alt="Brain icon" />
-            </div>
+            </div> */}
             <span className="ml-2">Mental health</span>
           </label>
 
@@ -184,9 +189,9 @@ export default function Modal({ toggleModal, refreshData }) {
             htmlFor="Finances"
             className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer text-neutral-700"
           >
-            <div className="w-7 h-7 ml-2">
+            {/* <div className="w-7 h-7 ml-2">
               <Image src={dollar} alt="Dollar icon" />
-            </div>
+            </div> */}
             <span className="ml-2">Finances</span>
           </label>
 
@@ -201,9 +206,9 @@ export default function Modal({ toggleModal, refreshData }) {
             htmlFor="Creativity"
             className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer text-neutral-700"
           >
-            <div className="w-7 h-7 ml-2">
+            {/* <div className="w-7 h-7 ml-2">
               <Image src={art} alt="Art icon" />
-            </div>
+            </div> */}
             <span className="ml-2">Creativity</span>
           </label>
 
@@ -218,9 +223,9 @@ export default function Modal({ toggleModal, refreshData }) {
             htmlFor="Social"
             className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer text-neutral-700"
           >
-            <div className="w-7 h-7 ml-2">
+            {/* <div className="w-7 h-7 ml-2">
               <Image src={social} alt="Social icon" />
-            </div>
+            </div> */}
             <span className="ml-2">Social</span>
           </label>
         </div>
