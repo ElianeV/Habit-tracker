@@ -9,7 +9,7 @@ import love from "../public/Self-care.png";
 import productive from "../public/Productivity.png";
 import social from "../public/Social.png";
 
-export default function Modal({ toggleModal }) {
+export default function Modal({ toggleModal, refreshData }) {
   const [newHabitName, setNewHabitName] = useState("");
   const [newHabitCategory, setNewHabitCategory] = useState("Physical health");
   const [newHabitGoal, setNewHabitGoal] = useState(7);
@@ -22,12 +22,15 @@ export default function Modal({ toggleModal }) {
         category: newHabitCategory,
         goal: newHabitGoal,
       };
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/habits`, {
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/habits`, {
         method: "POST",
         body: JSON.stringify(habit),
         headers: {
           "Content-type": "application/json; charset=utf-8",
         },
+      }).then(() => {
+        toggleModal();
+        refreshData();
       });
     } else {
       setRequiredError(true);
