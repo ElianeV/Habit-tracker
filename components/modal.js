@@ -121,9 +121,14 @@ export default function Modal({ toggleModal, refreshData }) {
             htmlFor="Learning"
             className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer text-neutral-700"
           >
-            {/* <div className="w-7 h-7 ml-2">
-              <Image src={book} alt="Book icon" />
-            </div> */}
+            <div className="w-7 h-7 ml-2">
+              <Image
+                src={`/Social.png`}
+                width="40px"
+                height="40px"
+                alt="Fitness icon"
+              />
+            </div>
             <span className="ml-2">Learning</span>
           </label>
 
