@@ -33,7 +33,7 @@ export default function Habitmanager({ data }) {
         <>
           <div className="w-11/12 m-auto">
             <h1 className="mt-10 text-4xl font-bold text-neutral-800">
-              Your habits
+              My habits
             </h1>
             {data.length < 8 ? (
               <button

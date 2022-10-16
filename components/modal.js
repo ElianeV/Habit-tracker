@@ -73,6 +73,7 @@ export default function Modal({ toggleModal, refreshData }) {
               : "w-full block rounded-3xl bg-neutral-50 border-neutral-200 focus:outline-none focus:border-indigo-400 focus:ring-1 focus:ring-indigo-400"
           }
           value={newHabitName}
+          maxlength="34"
           onChange={(event) => setNewHabitName(event.target.value)}
         />
         {requiredError ? (
