@@ -35,13 +35,20 @@ export default function Habitmanager({ data }) {
             <h1 className="mt-10 text-4xl font-bold text-neutral-800">
               Your habits
             </h1>
-            <button
-              className="float-right -mt-10 text-white bg-indigo-500 hover:bg-indigo-800  font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-              type="button"
-              onClick={toggleModal}
-            >
-              Add new habit
-            </button>
+            {data.length < 8 ? (
+              <button
+                className="float-right -mt-10 text-white bg-indigo-500 hover:bg-indigo-800  font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                type="button"
+                onClick={toggleModal}
+              >
+                Add new habit
+              </button>
+            ) : (
+              <h4 className=" w-48 float-right -mt-10 text-rose-500 font-medium text-sm p-2 text-center border-rose-400 border-solid border-2 rounded-xl">
+                You have reached the maximum of 8 habits
+              </h4>
+            )}
+
             <div className="w-full mt-8 mb-8 flex flex-wrap justify-around">
               {data
                 .sort((a, b) => compare(b.createdAt, a.createdAt))
