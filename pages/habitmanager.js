@@ -42,11 +42,11 @@ export default function Habitmanager({ data }) {
             >
               Add new habit
             </button>
-            <div className="w-full mt-8 flex flex-wrap">
+            <div className="w-full mt-8 mb-8 flex flex-wrap justify-around">
               {data
                 .sort((a, b) => compare(b.createdAt, a.createdAt))
                 .map((habit) => (
-                  <div key={habit.id} className="w-1/3">
+                  <div key={habit.id} className="w-72 mx-6">
                     <div className="w-14 h-14 z-20 p-2 relative top-7 left-64 bg-white border-neutral-200 border-solid border-2 rounded-xl shadow-xl">
                       <Image
                         src={`/${habit.category}.png`}
