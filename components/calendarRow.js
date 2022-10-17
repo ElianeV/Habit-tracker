@@ -17,7 +17,7 @@ export default function CalendarRow({ habit, dates }) {
   }, [habit]);
 
   return (
-    <div className="w-400 flex justify-between grow border-b">
+    <div className="w-400 flex justify-between grow border-t">
       {dates.map((day) =>
         completedDays.map((completedDay) => (
           <div className="w-10 p-1 border-l border-r" key={day.getDate()}>
