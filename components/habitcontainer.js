@@ -1,7 +1,7 @@
 export default function Habitcontainer({ habits }) {
   return (
     <>
-      <div className="w-1/3 h-5/6 ml-10 shadow-lg bg-slate-50 flex flex-col">
+      <div className="w-1/3 h-5/6 ml-10 border-neutral-200 border-solid border-2 border-r-0 rounded-3xl rounded-r-none shadow-lg bg-slate-50 flex flex-col">
         <div className="h-16 p-1 border-b flex justify-between">
           <div>My habits</div>
           <div>
