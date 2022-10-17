@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import moment from "moment";
 
 export default function CalendarRow({ habit, dates }) {
   const [completedDays, setCompletedDays] = useState([]);
@@ -17,8 +18,13 @@ export default function CalendarRow({ habit, dates }) {
   }, [habit]);
 
   return (
-    <div className="w-400 flex justify-between grow border-t">
-      {dates.map((day) =>
+    <div className="w-800 flex justify-around text-center items-center grow border-t">
+      {dates.map((date) => (
+        <div className="w-16" key={date.getDate()}>
+          <div className="w-16 h-12 m-auto border-neutral-200 border-solid border-2 rounded-xl"></div>
+        </div>
+      ))}
+      {/* {dates.map((day) =>
         completedDays.map((completedDay) => (
           <div className="w-10 p-1 border-l border-r" key={day.getDate()}>
             {new Date(completedDay.date).toDateString() ===
@@ -29,7 +35,7 @@ export default function CalendarRow({ habit, dates }) {
             )}
           </div>
         ))
-      )}
+      )} */}
     </div>
   );
 }
