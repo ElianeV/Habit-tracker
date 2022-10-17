@@ -42,7 +42,7 @@ export default function Modal({ toggleModal, refreshData }) {
         <button
           type="button"
           onClick={toggleModal}
-          class="relative left-[360px] bg-white rounded-md p-1 inline-flex items-center justify-center text-neutral-400 hover:text-neutral-500 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+          class="relative left-[360px] bg-white rounded-md p-1 inline-flex items-center justify-center text-neutral-400 hover:text-neutral-500 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-violet-500"
         >
           <svg
             class="h-6 w-6"
@@ -70,7 +70,7 @@ export default function Modal({ toggleModal, refreshData }) {
           className={
             requiredError
               ? "w-full block rounded-3xl bg-neutral-50 border-rose-400 focus:outline-none focus:border-rose-400 focus:ring-1 focus:ring-rose-400"
-              : "w-full block rounded-3xl bg-neutral-50 border-neutral-200 focus:outline-none focus:border-indigo-400 focus:ring-1 focus:ring-indigo-400"
+              : "w-full block rounded-3xl bg-neutral-50 border-neutral-200 focus:outline-none focus:border-violet-400 focus:ring-1 focus:ring-violet-400"
           }
           value={newHabitName}
           maxlength="34"
@@ -98,7 +98,7 @@ export default function Modal({ toggleModal, refreshData }) {
           />
           <label
             htmlFor="Physical health"
-            className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer text-neutral-700"
+            className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-violet-50 cursor-pointer text-neutral-700"
           >
             <div className="w-7 h-7 ml-2">
               <Image
@@ -120,7 +120,7 @@ export default function Modal({ toggleModal, refreshData }) {
           />
           <label
             htmlFor="Learning"
-            className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer text-neutral-700"
+            className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-violet-50 cursor-pointer text-neutral-700"
           >
             <div className="w-7 h-7 ml-2">
               <Image
@@ -142,7 +142,7 @@ export default function Modal({ toggleModal, refreshData }) {
           />
           <label
             htmlFor="Productivity"
-            className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer text-neutral-700"
+            className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-violet-50 cursor-pointer text-neutral-700"
           >
             {/* <div className="w-7 h-7 ml-2">
               <Image src={productive} alt="Productive icon" />
@@ -159,7 +159,7 @@ export default function Modal({ toggleModal, refreshData }) {
           />
           <label
             htmlFor="Self-care"
-            className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer text-neutral-700"
+            className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-violet-50 cursor-pointer text-neutral-700"
           >
             {/* <div className="w-7 h-7 ml-2">
               <Image src={love} alt="Love icon" />
@@ -176,7 +176,7 @@ export default function Modal({ toggleModal, refreshData }) {
           />
           <label
             htmlFor="Mental health"
-            className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer text-neutral-700"
+            className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-violet-50 cursor-pointer text-neutral-700"
           >
             {/* <div className="w-7 h-7 ml-2">
               <Image src={brain} alt="Brain icon" />
@@ -193,7 +193,7 @@ export default function Modal({ toggleModal, refreshData }) {
           />
           <label
             htmlFor="Finances"
-            className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer text-neutral-700"
+            className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-violet-50 cursor-pointer text-neutral-700"
           >
             {/* <div className="w-7 h-7 ml-2">
               <Image src={dollar} alt="Dollar icon" />
@@ -210,7 +210,7 @@ export default function Modal({ toggleModal, refreshData }) {
           />
           <label
             htmlFor="Creativity"
-            className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer text-neutral-700"
+            className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-violet-50 cursor-pointer text-neutral-700"
           >
             {/* <div className="w-7 h-7 ml-2">
               <Image src={art} alt="Art icon" />
@@ -227,7 +227,7 @@ export default function Modal({ toggleModal, refreshData }) {
           />
           <label
             htmlFor="Social"
-            className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-indigo-50 cursor-pointer text-neutral-700"
+            className="w-44 block flex p-1 mb-1 bg-neutral-50 border-neutral-100 rounded-3xl hover:bg-violet-50 cursor-pointer text-neutral-700"
           >
             {/* <div className="w-7 h-7 ml-2">
               <Image src={social} alt="Social icon" />
@@ -239,7 +239,7 @@ export default function Modal({ toggleModal, refreshData }) {
         <h6 className="font-bold mt-2 pl-4 text-neutral-700">Goal</h6>
         <span className="ml-4 text-neutral-700">Complete</span>
         <input
-          className="w-20 mx-1 bg-neutral-50 border-neutral-200 border-solid border-1   rounded-3xl text-neutral-700 focus:outline-none focus:border-indigo-400 focus:ring-1 focus:ring-indigo-400"
+          className="w-20 mx-1 bg-neutral-50 border-neutral-200 border-solid border-1   rounded-3xl text-neutral-700 focus:outline-none focus:border-violet-400 focus:ring-1 focus:ring-violet-400"
           type="number"
           name="goal"
           min="1"

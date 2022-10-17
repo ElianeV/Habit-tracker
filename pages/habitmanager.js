@@ -37,7 +37,7 @@ export default function Habitmanager({ data }) {
             </h1>
             {data.length < 8 ? (
               <button
-                className="float-right -mt-10 text-white bg-indigo-500 hover:bg-indigo-800  font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                className="float-right -mt-10 text-white bg-violet-500 hover:bg-violet-800  font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                 type="button"
                 onClick={toggleModal}
               >
@@ -75,14 +75,14 @@ export default function Habitmanager({ data }) {
                         Goal: {habit.habitsCompleted}/{habit.goal} days
                       </h4>
                       <div className="absolute bottom-2 right-8 flex">
-                        <p className="text-indigo-500 mr-2">Details</p>
+                        <p className="text-violet-500 mr-2">Details</p>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
                           strokeWidth="1.5"
                           stroke="currentColor"
-                          className="w-6 h-6 text-indigo-500"
+                          className="w-6 h-6 text-violet-500"
                         >
                           <path
                             strokeLinecap="round"

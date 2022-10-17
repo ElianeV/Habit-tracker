@@ -5,7 +5,7 @@ export default function Login() {
         <div>
           <img
             class="mx-auto h-12 w-auto"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+            src="https://tailwindui.com/img/logos/mark.svg?color=violet&shade=600"
             alt="Your Company"
           />
           <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
@@ -15,7 +15,7 @@ export default function Login() {
             Or
             <a
               href="#"
-              class="font-medium text-indigo-600 hover:text-indigo-500"
+              class="font-medium text-violet-600 hover:text-violet-500"
             >
               start your 14-day free trial
             </a>
@@ -34,7 +34,7 @@ export default function Login() {
                 type="email"
                 autocomplete="email"
                 required
-                class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-violet-500 focus:outline-none focus:ring-violet-500 sm:text-sm"
                 placeholder="Email address"
               />
             </div>
@@ -48,7 +48,7 @@ export default function Login() {
                 type="password"
                 autocomplete="current-password"
                 required
-                class="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                class="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-violet-500 focus:outline-none focus:ring-violet-500 sm:text-sm"
                 placeholder="Password"
               />
             </div>
@@ -60,7 +60,7 @@ export default function Login() {
                 id="remember-me"
                 name="remember-me"
                 type="checkbox"
-                class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                class="h-4 w-4 rounded border-gray-300 text-violet-600 focus:ring-violet-500"
               />
               <label for="remember-me" class="ml-2 block text-sm text-gray-900">
                 Remember me
@@ -70,7 +70,7 @@ export default function Login() {
             <div class="text-sm">
               <a
                 href="#"
-                class="font-medium text-indigo-600 hover:text-indigo-500"
+                class="font-medium text-violet-600 hover:text-violet-500"
               >
                 Forgot your password?
               </a>
@@ -80,11 +80,11 @@ export default function Login() {
           <div>
             <button
               type="submit"
-              class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              class="group relative flex w-full justify-center rounded-md border border-transparent bg-violet-600 py-2 px-4 text-sm font-medium text-white hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
             >
               <span class="absolute inset-y-0 left-0 flex items-center pl-3">
                 <svg
-                  class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400"
+                  class="h-5 w-5 text-violet-500 group-hover:text-violet-400"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
