@@ -3,7 +3,6 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const habitId = req.query["habit"];
-  console.log(habitId);
 
   if (!habitId || typeof habitId !== "string") {
     res.statusCode = 404;

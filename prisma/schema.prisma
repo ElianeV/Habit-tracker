@@ -23,5 +23,5 @@ model Day {
   id        Int      @id @default(autoincrement())
   date      DateTime
   habit     Habit? @relation(fields: [habitId], references: [id])
-  habitId Int
+  habitId   Int
 }
