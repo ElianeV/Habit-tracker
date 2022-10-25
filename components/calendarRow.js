@@ -2,20 +2,21 @@ import { useEffect, useState } from "react";
 
 export default function CalendarRow({ habit, dates }) {
   const [completedDays, setCompletedDays] = useState([]);
+  const [dayOn, setDayOn] = useState(false);
 
-  useEffect(() => {
-    async function fetchData() {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/habit/${habit.id}`
-      );
-      const data = await res.json();
-      setCompletedDays(data);
-    }
-    fetchData();
-  }, [habit]);
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     const res = await fetch(
+  //       `${process.env.NEXT_PUBLIC_API_URL}/api/habit/${habit.id}`
+  //     );
+  //     const data = await res.json();
+  //     setCompletedDays(data);
+  //   }
+  //   fetchData();
+  // }, [habit]);
 
   const toggleDay = async (date) => {
-    // console.log(date.toUTCString());
+    console.log(date);
 
     const day = {
       // Date was stored in db by one day off, needed to offset timezone (Prisma's fault!!!)
@@ -32,6 +33,7 @@ export default function CalendarRow({ habit, dates }) {
         "Content-type": "application/json; charset=utf-8",
       },
     });
+    setDayOn(!dayOn);
   };
 
   return (
@@ -39,7 +41,11 @@ export default function CalendarRow({ habit, dates }) {
       {dates.map((date) => (
         <div className="w-16" key={date.getDate()}>
           <div
-            className="w-16 h-12 m-auto border-neutral-200 border-solid border rounded-xl"
+            className={
+              dayOn
+                ? "w-16 h-12 m-auto border-neutral-200 border-solid border rounded-xl bg-neutral-800"
+                : "w-16 h-12 m-auto border-neutral-200 border-solid border rounded-xl"
+            }
             onClick={() => toggleDay(date)}
           ></div>
         </div>

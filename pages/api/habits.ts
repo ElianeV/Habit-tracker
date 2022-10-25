@@ -9,9 +9,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           name: req.body.name,
           category: req.body.category,
           goal: req.body.goal,
-          // habitsCompleted: {
-          //   create: [{ date: new Date() }],
-          // },
         },
       });
       return res.status(200).json(createHabit);
