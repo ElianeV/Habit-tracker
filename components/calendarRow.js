@@ -2,17 +2,23 @@ import { useEffect, useState } from "react";
 
 export default function CalendarRow({ habit, dates }) {
   const [completedDays, setCompletedDays] = useState([]);
+  const completedDaysStrings = completedDays.map((day) =>
+    new Date(day.date).toDateString()
+  );
 
   useEffect(() => {
-    async function fetchData() {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/habit/${habit.id}`
-      );
-      const data = await res.json();
-      setCompletedDays(data);
-    }
     fetchData();
   }, [completedDays]);
+
+  async function fetchData() {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/habit/${habit.id}`
+    );
+    const data = await res.json();
+    setCompletedDays(data);
+  }
+
+  // console.log({ dates, completedDays });
 
   const toggleDay = async (date) => {
     const day = {
@@ -31,26 +37,32 @@ export default function CalendarRow({ habit, dates }) {
     });
   };
 
+  const deleteCompletedDay = (completedDay) => {
+    // const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/days/${day.id}`, {
+    //   method: "DELETE",
+    // })
+    // const data = await res.json()
+    // console.log(data)
+    // fetchData()
+    console.log(completedDay);
+  };
+
   return (
     <div className="w-800 flex justify-around text-center items-center grow border-t">
       {dates.map((date) => (
-        <div
-          className="w-16 h-12 m-auto border-neutral-200 border-solid border rounded-xl cursor-pointer"
-          key={date.getDate()}
-          onClick={() => toggleDay(date)}
-        >
-          {completedDays.map((completedDay) =>
-            new Date(completedDay.date).toDateString() ===
-            date.toDateString() ? (
-              <div
-                key={completedDay.date}
-                className="w-16 h-12 m-auto border-neutral-200 border-solid border rounded-xl cursor-pointer bg-neutral-800"
-              ></div>
-            ) : (
-              ""
-            )
+        <>
+          {completedDaysStrings.includes(date.toDateString()) ? (
+            <div
+              className="w-16 h-12 m-auto rounded-xl cursor-pointer bg-neutral-800"
+              onClick={() => deleteCompletedDay(completedDay)}
+            ></div>
+          ) : (
+            <div
+              className="w-16 h-12 m-auto border-neutral-200 border-solid border rounded-xl cursor-pointer"
+              onClick={() => toggleDay(date)}
+            ></div>
           )}
-        </div>
+        </>
       ))}
     </div>
   );
