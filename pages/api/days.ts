@@ -15,8 +15,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       return res.status(404).json({ message: "Server error" });
     }
   }
-  // else {
-  //   const habits = await prisma.habit.findMany();
-  //   return res.status(200).json(habits);
-  // }
+
+  if (req.method === "DELETE") {
+    // Process a POST request
+  } else {
+    // Handle any other HTTP method
+  }
 };
