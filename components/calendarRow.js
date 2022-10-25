@@ -2,22 +2,19 @@ import { useEffect, useState } from "react";
 
 export default function CalendarRow({ habit, dates }) {
   const [completedDays, setCompletedDays] = useState([]);
-  const [dayOn, setDayOn] = useState(false);
 
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     const res = await fetch(
-  //       `${process.env.NEXT_PUBLIC_API_URL}/api/habit/${habit.id}`
-  //     );
-  //     const data = await res.json();
-  //     setCompletedDays(data);
-  //   }
-  //   fetchData();
-  // }, [habit]);
+  useEffect(() => {
+    async function fetchData() {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/habit/${habit.id}`
+      );
+      const data = await res.json();
+      setCompletedDays(data);
+    }
+    fetchData();
+  }, [completedDays]);
 
   const toggleDay = async (date) => {
-    console.log(date);
-
     const day = {
       // Date was stored in db by one day off, needed to offset timezone (Prisma's fault!!!)
       date: new Date(
@@ -25,7 +22,6 @@ export default function CalendarRow({ habit, dates }) {
       ),
       habitId: habit.id,
     };
-    console.log(day);
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/days`, {
       method: "POST",
       body: JSON.stringify(day),
@@ -33,36 +29,29 @@ export default function CalendarRow({ habit, dates }) {
         "Content-type": "application/json; charset=utf-8",
       },
     });
-    setDayOn(!dayOn);
   };
 
   return (
     <div className="w-800 flex justify-around text-center items-center grow border-t">
       {dates.map((date) => (
-        <div className="w-16" key={date.getDate()}>
-          <div
-            className={
-              dayOn
-                ? "w-16 h-12 m-auto border-neutral-200 border-solid border rounded-xl bg-neutral-800"
-                : "w-16 h-12 m-auto border-neutral-200 border-solid border rounded-xl"
-            }
-            onClick={() => toggleDay(date)}
-          ></div>
-        </div>
-      ))}
-
-      {/* {dates.map((day) =>
-        completedDays.map((completedDay) => (
-          <div className="w-10 p-1 border-l border-r" key={day.getDate()}>
-            {new Date(completedDay.date).toDateString() ===
-            day.toDateString() ? (
-              <div className="w-full h-4 bg-red-200"></div>
+        <div
+          className="w-16 h-12 m-auto border-neutral-200 border-solid border rounded-xl cursor-pointer"
+          key={date.getDate()}
+          onClick={() => toggleDay(date)}
+        >
+          {completedDays.map((completedDay) =>
+            new Date(completedDay.date).toDateString() ===
+            date.toDateString() ? (
+              <div
+                key={completedDay.date}
+                className="w-16 h-12 m-auto border-neutral-200 border-solid border rounded-xl cursor-pointer bg-neutral-800"
+              ></div>
             ) : (
               ""
-            )}
-          </div>
-        ))
-      )} */}
+            )
+          )}
+        </div>
+      ))}
     </div>
   );
 }

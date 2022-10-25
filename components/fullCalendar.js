@@ -1,30 +1,9 @@
-import moment from "moment";
 import CalendarRow from "./calendarRow";
 
 export default function FullCalendar({ habits }) {
-  // const startOfMonth = moment().startOf("month");
-  // const endOfMonth = moment().endOf("month");
   const options = { weekday: "short" };
-  // const lengthOfMonth = endOfMonth.daysInMonth();
-
   const now = new Date();
-  const dates = getAllDaysInMonth(now.getFullYear(), now.getMonth());
-  // const test = [];
-  // const lastDate = moment(endOfMonth).startOf("day");
-
-  // // console.log(startOfMonth);
-
-  // // while (endOfPreviousMonth.add(1, "days").diff(lastDate) <= 0) {
-  // //   dates.push(endOfPreviousMonth.clone().toDate());
-  // // }
-
-  // for (let i = 0; i < lengthOfMonth - 1; i++) {
-  //   startOfMonth.add(1, "days");
-  //   console.log(startOfMonth);
-  // }
-  // console.log(test);
-
-  function getAllDaysInMonth(year, month) {
+  const getAllDaysInMonth = (year, month) => {
     const date = new Date(year, month, 1);
     const dates = [];
     while (date.getMonth() === month) {
@@ -32,9 +11,9 @@ export default function FullCalendar({ habits }) {
       date.setDate(date.getDate() + 1);
     }
     return dates;
-  }
+  };
 
-  // 👇️ all days of the current month
+  const dates = getAllDaysInMonth(now.getFullYear(), now.getMonth());
 
   return (
     <>
